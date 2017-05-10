@@ -15,9 +15,10 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.usersService.getUsers()
     .subscribe(user => {
-      this.users.push(user.time)
+      this.users = user
       error => alert(error)
-      console.log(user.time)
     });
   }
 }
+
+

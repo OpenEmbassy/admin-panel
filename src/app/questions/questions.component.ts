@@ -7,14 +7,14 @@ import { UsersService } from '../data/users.service';
   styleUrls: ['./questions.component.scss']
 })
 export class QuestionsComponent implements OnInit {
-  questions: string[] = ['Q1', 'Q2', 'Q3'];
+  questions: string[] = [];
   
   constructor(private usersService: UsersService) { }
   
   ngOnInit() {
      this.usersService.getUsers()
     .subscribe(question => {
-      this.questions.push(question.date)
+      this.questions = question;
       error => alert(error);
       console.log(question.date);
     });

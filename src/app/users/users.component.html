@@ -1,1 +1,6 @@
-<p *ngFor="let user of users"> {{user}}
+<md-list>
+    <md-list-item *ngFor="let user of users">
+        <img md-list-avatar src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-128.png">
+        <h4 md-line> User: {{user.userId}}</h4>
+    </md-list-item>
+</md-list>

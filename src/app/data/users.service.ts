@@ -10,7 +10,7 @@ export class UsersService {
 
   getUsers() {
     // return this.api.get('/users');
-    return this.api.get('http://date.jsontest.com')
+    return this.api.get('https://jsonplaceholder.typicode.com/posts')
       .map(response => response.json());
   }
 

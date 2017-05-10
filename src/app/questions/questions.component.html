@@ -1,1 +1,9 @@
-<p *ngFor="let question of questions">Question: {{ question }}</p>
+<md-list>
+    <md-list-item *ngFor="let question of questions">
+        <img md-list-avatar src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-128.png">
+        <h3 md-line> User: {{question.userId}} </h3>
+        <h4 md-line> Question No: {{question.id}} </h4>
+        <p md-line> {{question.title}} </p>
+        <p md-line class="demo-2"> {{question.body}} </p>
+    </md-list-item>
+</md-list>
