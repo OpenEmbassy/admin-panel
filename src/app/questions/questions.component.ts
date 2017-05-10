@@ -8,6 +8,7 @@ import { UsersService } from '../data/users.service';
 })
 export class QuestionsComponent implements OnInit {
   questions: string[] = [];
+  page: number = 1;
   
   constructor(private usersService: UsersService) { }
   
