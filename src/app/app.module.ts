@@ -8,17 +8,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiService } from './data/api.service';
-import { StudentsService } from './data/students.service';
-import { StudentsComponent } from './students/students.component';
-import { TeachersComponent } from './teachers/teachers.component';
+import { UsersService } from './data/users.service';
 import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent,
-    TeachersComponent,
-    HomeComponent
+    HomeComponent,
+    UsersComponent,
+    QuestionsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { HomeComponent } from './home/home.component';
   ],
   providers: [
     ApiService,
-    StudentsService
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

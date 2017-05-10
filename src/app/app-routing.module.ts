@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { StudentsComponent } from './students/students.component';
-import { TeachersComponent } from './teachers/teachers.component';
+import { UsersComponent } from './users/users.component';
+import { QuestionsComponent } from './questions/questions.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [{
-    	path: 'students',
-    	component: StudentsComponent
+    	path: 'users',
+    	component: UsersComponent
     }, {
-    	path: 'teachers',
-    	component: TeachersComponent
+    	path: 'questions',
+    	component: QuestionsComponent
     }, {
       path: '',
       pathMatch: 'full',
