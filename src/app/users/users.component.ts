@@ -6,19 +6,17 @@ import { UsersService } from '../data/users.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
+
 export class UsersComponent implements OnInit {
   users: string[] = [];
-  
+
   constructor(private usersService: UsersService) {
   }
-  
+
   ngOnInit() {
-    this.usersService.getUsers()
-    .subscribe(user => {
-      this.users = user
-      error => alert(error)
-    });
+    this.usersService.getAllUsers()
+      .subscribe(user => {
+        this.users = user;
+      }, error => alert(error));
   }
 }
-
-

@@ -28,7 +28,7 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule,
+    MaterialModule.forRoot(),
     BrowserAnimationsModule,
     NgxPaginationModule
   ],

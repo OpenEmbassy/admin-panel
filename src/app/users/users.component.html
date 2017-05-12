@@ -1,13 +1,78 @@
-<md-list>
-    <md-list-item *ngFor="let user of users | paginate: {
+<md-tab-group>
+
+    <md-tab label=" All Users">
+        <md-list *ngFor="let user of users | paginate: {
         itemsPerPage: 10,
         currentPage: page}">
-        <img md-list-avatar src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-128.png">
-        <h4 md-line> User: {{user.userId}}</h4>
-    </md-list-item>
-</md-list>
+            <md-list-item>
+                <h4 md-line> User: {{user.userId}}</h4>
+                <!--<h4 md-line> User: {{user.firstName} {{user.lastName}}</h4> Fields from api/database/seeders/-->
+            </md-list-item>
+        </md-list>
+        <div class="has-text-centered">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </md-tab>
 
+    <md-tab label="Admins">
+        <md-list *ngFor="let user of users | paginate: {
+        itemsPerPage: 10,
+        currentPage: page}">
+            <!--<md-list-item *ngIf="user.type == admin"> Fields from api/database/seeders/ -->
+            <md-list-item *ngIf="user.userId !== admin">
+                <h4 md-line> User: {{user.userId}}</h4>
+                <!--<h4 md-line> User: {{user.firstName} {{user.lastName}}</h4> Fields from api/database/seeders/ -->
+            </md-list-item>
+        </md-list>
+        <div class="has-text-centered">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </md-tab>
 
-<div class="has-text-centered">
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
-</div>
+    <md-tab label="Users">
+        <md-list *ngFor="let user of users | paginate: {
+        itemsPerPage: 10,
+        currentPage: page}">
+            <!--<md-list-item *ngIf="user.type == user"> Fields from api/database/seeders/ -->
+            <md-list-item *ngIf="user.userId !== user">
+                <h4 md-line> User: {{user.userId}}</h4>
+                <!--<h4 md-line> User: {{user.firstName} {{user.lastName}}</h4> Fields from api/database/seeders/-->
+            </md-list-item>
+        </md-list>
+        <div class="has-text-centered">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+
+    </md-tab>
+
+    <md-tab label="Translators">
+        <md-list *ngFor="let user of users | paginate: {
+        itemsPerPage: 10,
+        currentPage: page}">
+            <!--<md-list-item *ngIf="user.type == translator"> Fields from api/database/seeders/ -->
+            <md-list-item *ngIf="user.userId !== translator">
+                <h4 md-line> User: {{user.userId}}</h4>
+                <!--<h4 md-line> User: {{user.firstName} {{user.lastName}}</h4> Fields from api/database/seeders/-->
+            </md-list-item>
+        </md-list>
+        <div class="has-text-centered">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </md-tab>
+
+    <md-tab label="Volunteers">
+        <md-list *ngFor="let user of users | paginate: {
+        itemsPerPage: 10,
+        currentPage: page}">
+            <!--<md-list-item *ngIf="user.type == volunteer"> Fields from api/database/seeders/ -->
+            <md-list-item *ngIf="user.userId !== volunteer">
+                <h4 md-line> User: {{user.userId}}</h4>
+                <!--<h4 md-line> User: {{user.firstName} {{user.lastName}}</h4> Fields from api/database/seeders/ -->
+            </md-list-item>
+        </md-list>
+        <div class="has-text-centered">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </md-tab>
+
+</md-tab-group>

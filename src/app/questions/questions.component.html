@@ -1,14 +1,33 @@
-<md-list>
+<!--<md-list>
     <md-list-item *ngFor="let question of questions | paginate: {
         itemsPerPage: 10,
         currentPage: page} ">
-        <img md-list-avatar src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-128.png ">
         <h3 md-line> User: {{question.userId}} </h3>
         <h4 md-line> Question No: {{question.id}} </h4>
         <p md-line> {{question.title}} </p>
         <p md-line class="demo-2 "> {{question.body}} </p>
-    </md-list-item>
-</md-list>
+        <!--<h3 md-line> Question No: {{question.title}}</h3> Fields from api/database/seeders/-->
+<!--<h4 md-line> Question No: {{question.content}}</h4> Fields from api/database/seeders/-->
+<!--<p md-line> Question No: {{question.status}}</p> Fields from api/database/seeders/-->
+<!--</md-list-item>
+</md-list>-->
+
+
+<md-card *ngFor="let userId of userIds | paginate: {
+        itemsPerPage: 1,
+        currentPage: page}">
+    <md-card-title> User: {{userId}} </md-card-title>
+    <md-card-content>
+        <md-list>
+            <md-list-item *ngFor="let question of questions[userId]">
+                <h4 md-line> Question No: {{question.id}} </h4>
+                <p md-line> {{question.title}} </p>
+                <p md-line class="demo-2"> {{question.body}} </p>
+            </md-list-item>
+        </md-list>
+    </md-card-content>
+</md-card>
+
 
 <div class="has-text-centered">
     <pagination-controls (pageChange)="page = $event"></pagination-controls>

@@ -5,20 +5,20 @@ import { QuestionsComponent } from './questions/questions.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {
+{
+  path: '',
+  children: [{
+    path: 'users',
+    component: UsersComponent
+  }, {
+    path: 'questions',
+    component: QuestionsComponent
+  }, {
     path: '',
-    children: [{
-    	path: 'users',
-    	component: UsersComponent
-    }, {
-    	path: 'questions',
-    	component: QuestionsComponent
-    }, {
-      path: '',
-      pathMatch: 'full',
-      component: HomeComponent
-    }]
-  }
+    pathMatch: 'full',
+    component: HomeComponent
+  }]
+}
 ];
 
 @NgModule({
