@@ -1,4 +1,4 @@
-<!--<md-list>
+<md-list>
     <md-list-item *ngFor="let question of questions | paginate: {
         itemsPerPage: 10,
         currentPage: page} ">
@@ -7,13 +7,13 @@
         <p md-line> {{question.title}} </p>
         <p md-line class="demo-2 "> {{question.body}} </p>
         <!--<h3 md-line> Question No: {{question.title}}</h3> Fields from api/database/seeders/-->
-<!--<h4 md-line> Question No: {{question.content}}</h4> Fields from api/database/seeders/-->
-<!--<p md-line> Question No: {{question.status}}</p> Fields from api/database/seeders/-->
-<!--</md-list-item>
-</md-list>-->
+        <!--<p md-line> Question No: {{question.status}}</p> Fields from api/database/seeders/-->
+        <!--<h4 md-line> Question No: {{question.content}}</h4> Fields from api/database/seeders/-->
+    </md-list-item>
+</md-list>
 
 
-<md-card *ngFor="let userId of userIds | paginate: {
+<!--<md-card *ngFor="let userId of userIds | paginate: {
         itemsPerPage: 1,
         currentPage: page}">
     <md-card-title> User: {{userId}} </md-card-title>
@@ -26,7 +26,7 @@
             </md-list-item>
         </md-list>
     </md-card-content>
-</md-card>
+</md-card>-->
 
 
 <div class="has-text-centered">
