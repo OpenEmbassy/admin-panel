@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NgxPaginationModule} from 'ngx-pagination';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiService } from './data/api.service';
@@ -14,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HeaderComponent } from './header/header.component';
+import { UserItemComponent } from './user-item/user-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     UsersComponent,
     QuestionsComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserItemComponent
   ],
   imports: [
     BrowserModule,
