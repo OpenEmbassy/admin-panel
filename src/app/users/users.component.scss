@@ -1,15 +1,27 @@
-md-list {
-    margin: 0px;
-    padding: 0px;
-}
-
 .has-text-centered {
     margin: auto;
-    width: 40%;
+    width: 35%;
     border: 1px solid green;
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 5px;
     text-align: center;
     font-family: arial;
     font-size: 0.9em;
+}
+
+md-card {
+    margin: 0px auto;
+    padding: 5px;
+    width: 90%;
+}
+
+body {
+    padding: 30px;
+    background: #fafafa;
+}
+
+.mdl-data-table th,
+.mdl-data-table td {
+    text-align: left;
+    font-size: 1em;
 }

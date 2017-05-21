@@ -1,16 +1,43 @@
-<md-list>
-    <md-list-item *ngFor="let question of questions | paginate: {
+<html>
+
+<head>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div>
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                    <th>Question No</th>
+                    <th>Question Title</th>
+                    <th>Question</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let question of questions | paginate: {
         itemsPerPage: 10,
         currentPage: page} ">
-        <h3 md-line> User: {{question.userId}} </h3>
-        <h4 md-line> Question No: {{question.id}} </h4>
-        <p md-line> {{question.title}} </p>
-        <p md-line class="demo-2 "> {{question.body}} </p>
-        <!--<h3 md-line> Question No: {{question.title}}</h3> Fields from api/database/seeders/-->
-        <!--<p md-line> Question No: {{question.status}}</p> Fields from api/database/seeders/-->
-        <!--<h4 md-line> Question No: {{question.content}}</h4> Fields from api/database/seeders/-->
-    </md-list-item>
-</md-list>
+                    <td>{{question.userId}}</td>
+                    <td>{{question.id}} </td>
+                    <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{question.body}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
+
+
+
 
 
 <!--<md-card *ngFor="let userId of userIds | paginate: {

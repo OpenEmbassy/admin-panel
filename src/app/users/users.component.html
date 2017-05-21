@@ -1,127 +1,141 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<html>
+
+<head>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
 
 
-<md-tab-group>
+<body>
+    <div>
+        <md-tab-group>
+            <md-tab label=" All Users">
+                <!--<form>
+                    <md-select multiple placeholder="Select User Type" [(ngModel)]="selectedValue" name="id">
+                        <md-option *ngFor="let id of data" [value]="id.userId">
+                            {{id.userId}}
+                        </md-option>
+                    </md-select>
+                </form>-->
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>User Type</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let i of data | paginate: {itemsPerPage: 20,currentPage: page} ">
+                        <tr>
+                            <td>{{i.userId}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{i.firstName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{i.lastName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{i.type}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="has-text-centered">
+                    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                </div>
+            </md-tab>
 
-    <md-tab label=" All Users">
-        <md-list *ngFor="let user of users  | paginate: {
-        itemsPerPage: 10,
-        currentPage: page}">
-            <md-list-item>
-                <h4 md-line> User: {{user.userId}}</h4>
-            </md-list-item>
-        </md-list>
-        <div class="has-text-centered">
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
-    </md-tab>
+            <md-tab label="Admins">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>User Type</th>
+                        </tr>
+                    </thead>
+                    <!--<tbody *ngFor="let admin of admins">-->
+                    <tbody *ngFor="let user of data">
+                        <tr>
+                            <td>{{user.userId}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-tab>
 
-    <md-tab label="Admins">
-        <md-list *ngFor="let user of users">
-            <md-list-item *ngIf="user.userId === 1 || user.userId === 2">
-                <h4 md-line> User: {{user.userId}}</h4>
-            </md-list-item>
-        </md-list>
-    </md-tab>
+            <md-tab label="Users">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>User Type</th>
+                        </tr>
+                    </thead>
+                    <!--<tbody *ngFor="let volunteer of volunteers">-->
+                    <tbody *ngFor="let user of data">
+                        <tr>
+                            <td>{{user.userId}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-tab>
 
-    <md-tab label="Users">
-        <md-list *ngFor="let user of users">
-            <md-list-item *ngIf="user.userId === 3 || user.userId === 4">
-                <h4 md-line> User: {{user.userId}}</h4>
-            </md-list-item>
-        </md-list>
-    </md-tab>
+            <md-tab label="Translators">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>User Type</th>
+                        </tr>
+                    </thead>
+                    <!--<tbody *ngFor="let translator of translators">-->
+                    <tbody *ngFor="let user of data">
+                        <tr>
+                            <td>{{user.userId}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-tab>
 
-    <md-tab label="Translators">
-        <md-list *ngFor="let user of users">
-            <md-list-item *ngIf="user.userId === 5 || user.userId === 6">
-                <h4 md-line> User: {{user.userId}}</h4>
-            </md-list-item>
-        </md-list>
-    </md-tab>
+            <md-tab label="Volunteers">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>User Type</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let user of data">
+                        <tr>
+                            <td>{{user.userId}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-tab>
 
-    <md-tab label="Volunteers">
-        <md-list *ngFor="let user of users">
-            <md-list-item *ngIf="user.userId === 7 || user.userId === 8">
-                <h4 md-line> User: {{user.userId}}</h4>
-            </md-list-item>
-        </md-list>
-    </md-tab>
+        </md-tab-group>
 
-</md-tab-group>
+    </div>
+</body>
 
-
-<!--Code to fetch data from Fields from api/database/seeders/-->
-<!--<md-tab-group>
-
-    <md-tab label=" All Users">
-        <md-list *ngFor="let user of users | paginate: {
-        itemsPerPage: 10,
-        currentPage: page}">
-            <md-list-item>
-                <h4 md-line> User: {{user.firstName} {{user.lastName}}</h4> Fields from api/database/seeders/
-            </md-list-item>
-        </md-list>
-        <div class="has-text-centered">
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
-    </md-tab>
-
-    <md-tab label="Admins">
-        <md-list *ngFor="let user of users | paginate: {
-        itemsPerPage: 10,
-        currentPage: page}">
-            <md-list-item *ngIf="user.type == admin">
-                <h4 md-line> User: {{user.firstName} {{user.lastName}}</h4>
-            </md-list-item>
-        </md-list>
-        <div class="has-text-centered">
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
-    </md-tab>
-
-    <md-tab label="Users">
-        <md-list *ngFor="let user of users | paginate: {
-        itemsPerPage: 10,
-        currentPage: page}">
-            <md-list-item *ngIf="user.type == user">
-                <h4 md-line> User: {{user.firstName} {{user.lastName}}</h4>
-            </md-list-item>
-        </md-list>
-        <div class="has-text-centered">
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
-
-    </md-tab>
-
-    <md-tab label="Translators">
-        <md-list *ngFor="let user of users | paginate: {
-        itemsPerPage: 10,
-        currentPage: page}">
-            <md-list-item *ngIf="user.type == translator">
-                <h4 md-line> User: {{user.firstName} {{user.lastName}}</h4>
-            </md-list-item>
-        </md-list>
-        <div class="has-text-centered">
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
-    </md-tab>
-
-    <md-tab label="Volunteers">
-        <md-list *ngFor="let user of users | paginate: {
-        itemsPerPage: 10,
-        currentPage: page}">
-            <md-list-item *ngIf="user.type == volunteer">
-                <h4 md-line> User: {{user.firstName} {{user.lastName}}</h4>
-            </md-list-item>
-        </md-list>
-        <div class="has-text-centered">
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
-    </md-tab>
-
-</md-tab-group>-->
+</html>
 
 
+
+
+<!--{{user.firstName} {{user.lastName}} {{user.email}} {{user.active}} {{user.type}}-->
