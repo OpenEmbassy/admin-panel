@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
   admins: string[] = [];
   volunteers: string[] = [];
   translators: string[] = [];
-
+  
   constructor(private usersService: UsersService) {
   }
 

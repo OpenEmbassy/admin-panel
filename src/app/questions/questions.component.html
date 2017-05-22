@@ -31,30 +31,10 @@
             </tbody>
         </table>
     </div>
+
 </body>
 
 </html>
-
-
-
-
-
-
-<!--<md-card *ngFor="let userId of userIds | paginate: {
-        itemsPerPage: 1,
-        currentPage: page}">
-    <md-card-title> User: {{userId}} </md-card-title>
-    <md-card-content>
-        <md-list>
-            <md-list-item *ngFor="let question of questions[userId]">
-                <h4 md-line> Question No: {{question.id}} </h4>
-                <p md-line> {{question.title}} </p>
-                <p md-line class="demo-2"> {{question.body}} </p>
-            </md-list-item>
-        </md-list>
-    </md-card-content>
-</md-card>-->
-
 
 <div class="has-text-centered">
     <pagination-controls (pageChange)="page = $event"></pagination-controls>

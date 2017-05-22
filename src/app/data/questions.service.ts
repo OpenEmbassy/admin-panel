@@ -11,20 +11,4 @@ export class QuestionsService {
     return this.api.get('https://jsonplaceholder.typicode.com/posts')
     .map(response => response.json());
   }
-
-  getQuestionsStatusOpen() {
-    return this.api.get('https://jsonplaceholder.typicode.com/posts')
-    .map(response => response.json());
-  }
-  
-  getQuestionsStatusPickedUp() {
-    return this.api.get('https://jsonplaceholder.typicode.com/posts')
-    .map(response => response.json());
-  }
-
-  getQuestionsStatusAnswered() {
-    return this.api.get('https://jsonplaceholder.typicode.com/posts')
-    .map(response => response.json());
-  }
-  
 }
