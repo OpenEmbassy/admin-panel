@@ -41,7 +41,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#Working Folder
-styling-directives
-login
-questions/_questions.component.ts
+#Experiment Folders
+/styling-directives
+/login
+/questions/_questions.component.ts
