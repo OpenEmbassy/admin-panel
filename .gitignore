@@ -42,6 +42,6 @@ testem.log
 Thumbs.db
 
 #Working Folder
-/styling-directives
-/login
-/questions/_questions.component.ts
+styling-directives
+login
+questions/_questions.component.ts
