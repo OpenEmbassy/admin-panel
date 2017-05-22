@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UsersService } from '../data/users.service';
-import { ElementHighLighter } from '../stylying-directives/element-highlight.directive';
-
 
 @Component({
   selector: 'app-users',
@@ -17,7 +15,7 @@ export class UsersComponent implements OnInit {
   admins: string[] = [];
   volunteers: string[] = [];
   translators: string[] = [];
-  
+
   constructor(private usersService: UsersService) {
   }
 
