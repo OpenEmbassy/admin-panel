@@ -40,8 +40,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-#Experiment Folders
-/styling-directives
-/login
-/questions/_questions.component.ts
