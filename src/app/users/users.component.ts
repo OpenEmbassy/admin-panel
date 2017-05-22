@@ -11,12 +11,12 @@ import { ElementHighLighter } from '../stylying-directives/element-highlight.dir
 
 export class UsersComponent implements OnInit {
   // data = {};
-  selectedValue: string;
+  // selectedValue: string;
   data: string[] = [];
-  users: string[] = [];
-  admins: string[] = [];
-  volunteers: string[] = [];
-  translators: string[] = [];
+  // users = {};
+  // admins: string[] = [];
+  // volunteers = {};
+  // translators = {};
 
   constructor(private usersService: UsersService) {
   }

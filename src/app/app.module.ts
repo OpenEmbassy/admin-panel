@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiService } from './data/api.service';
 import { UsersService } from './data/users.service';
+import { QuestionsService } from './data/questions.service';
 import { UsersComponent } from './users/users.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HeaderComponent } from './header/header.component';
@@ -35,7 +36,8 @@ import { ElementHighLighter } from './stylying-directives/element-highlight.dire
   ],
   providers: [
     ApiService,
-    UsersService
+    UsersService,
+    QuestionsService
   ],
   bootstrap: [AppComponent]
 })

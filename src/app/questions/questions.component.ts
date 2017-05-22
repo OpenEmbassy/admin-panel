@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UsersService } from '../data/users.service';
+import { QuestionsService } from '../data/questions.service';
 
 
 
@@ -13,10 +13,10 @@ export class QuestionsComponent implements OnInit {
   questions: string[];
   page: number = 1;
 
-  constructor(private usersService: UsersService) { }
+  constructor(private questionsService: QuestionsService) { }
 
   ngOnInit() {
-    this.usersService.getAllUsers()
+    this.questionsService.getQuestions()
     .subscribe(question => {
       this.questions = question;
     },

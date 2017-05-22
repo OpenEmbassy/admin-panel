@@ -13,20 +13,20 @@
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
             <thead>
                 <tr>
-                    <th class="mdl-data-table__cell--non-numeric">User ID</th>
-                    <th>Question No</th>
-                    <th>Question Title</th>
-                    <th>Question</th>
+                    <th>Question ID</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let question of questions | paginate: {
         itemsPerPage: 10,
         currentPage: page} ">
-                    <td>{{question.userId}}</td>
-                    <td>{{question.id}} </td>
-                    <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
-                    <td class="mdl-data-table__cell--non-numeric">{{question.body}}</td>
+                    <td>{{question.questionId}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{question.title}} </td>
+                    <td class="mdl-data-table__cell--non-numeric">{{question.content}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{question.status}}</td>
                 </tr>
             </tbody>
         </table>
