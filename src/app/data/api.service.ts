@@ -10,11 +10,11 @@ export class ApiService {
   ) {}
 
   get(path, options?) {
-  	return this.http.get(path)
+  	return this.http.get(path, options)
   }
 
   post(path, params, options?) {
-  	return this.http.post(path, params)
+  	return this.http.post(path, params, options)
   }
 
 }
