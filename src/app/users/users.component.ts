@@ -42,5 +42,4 @@ export class UsersComponent implements OnInit {
 
       }, error => alert(error))
   }
-  
 }
