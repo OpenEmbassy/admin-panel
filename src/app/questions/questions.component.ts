@@ -20,7 +20,7 @@ export class QuestionsComponent implements OnInit {
   ngOnInit() {
     this.questionsService.getQuestions()
     .subscribe(questions => {
-      this.questions = questions;
+      this.questions = questions
 
       this.statusAnswered = questions.filter(question => question.status === 'answered')
 

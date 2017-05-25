@@ -1,11 +1,5 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { UsersService } from '../data/users.service';
-<<<<<<< HEAD
-import { ElementHighLighter } from '../stylying-directives/element-highlight.directive'
-import * as _ from 'lodash';
-
-=======
->>>>>>> front-end
 
 @Component({
   selector: 'app-users',
@@ -29,21 +23,16 @@ export class UsersComponent implements OnInit {
     this.usersService.getAllUsers()
       .subscribe(data => {
         this.data = data;
-        console.log(data)
 
         this.admins = data.filter(user => user.type === 'admin')
-        console.log(this.admins)
 
         this.users = data.filter(user => user.type === 'user')
-        console.log(this.users)
 
         this.volunteers = data.filter(user => user.type === 'volunteer')
-        console.log(this.volunteers)
 
         this.translators = data.filter(user => user.type === 'translator')
-        console.log(this.translators)
 
       }, error => alert(error))
   }
-  
+
 }
