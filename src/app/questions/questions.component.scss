@@ -1,3 +1,60 @@
+md-card {
+    margin: 0px auto;
+    padding: 5px;
+    width: 90%;
+}
+
+body {
+    padding: 5px;
+    background: #fafafa;
+}
+
+.mdl-data-table {
+    table-layout: fixed;
+    width: 95%;
+}
+
+.mdl-data-table th,
+.mdl-data-table td {
+    text-align: left;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.mdl-data-table td {
+    vertical-align: top;
+}
+
+.mdl-data-table__cell--non-numeric {
+    width: 38%;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+}
+
+.orange {
+    color: orange;
+}
+
+.redTH {
+    background: #ef5d5f;
+}
+
+.greenTH {
+    background: #5dd55d;
+}
+
+.orangeTH {
+    background: #ffad33;
+}
+
 .has-text-centered {
     margin: auto;
     width: 35%;
@@ -7,21 +64,4 @@
     text-align: center;
     font-family: arial;
     font-size: 0.9em;
-}
-
-md-card {
-    margin: 0px auto;
-    padding: 5px;
-    width: 90%;
-}
-
-body {
-    padding: 30px;
-    background: #fafafa;
-}
-
-.mdl-data-table th,
-.mdl-data-table td {
-    text-align: left;
-    font-size: 1em;
 }

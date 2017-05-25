@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { UsersService } from '../data/users.service';
-import { ElementHighLighter } from '../stylying-directives/element-highlight.directive';
+import { ElementHighLighter } from '../stylying-directives/element-highlight.directive'
+import * as _ from 'lodash';
 
 
 @Component({
@@ -10,13 +11,13 @@ import { ElementHighLighter } from '../stylying-directives/element-highlight.dir
 })
 
 export class UsersComponent implements OnInit {
-  // data = {};
   // selectedValue: string;
-  data: string[] = [];
-  // users = {};
-  // admins: string[] = [];
-  // volunteers = {};
-  // translators = {};
+  data: string[] = []
+  admins: string[] = []
+  users: string[] = []
+  volunteers: string[] = []
+  translators: string[] = []
+
 
   constructor(private usersService: UsersService) {
   }
@@ -25,10 +26,21 @@ export class UsersComponent implements OnInit {
     this.usersService.getAllUsers()
       .subscribe(data => {
         this.data = data;
-        // this.admins = data.filter(user => user.type === 'admin');
-        // this.users = data.filter(user => user.type === 'user');
-        // this.volunteers = data.filter(user => user.type === 'volunteer');
-        // this.translators = data.filter(user => user.type === 'translator');
-      }, error => alert(error));
+        console.log(data)
+
+        this.admins = data.filter(user => user.type === 'admin')
+        console.log(this.admins)
+
+        this.users = data.filter(user => user.type === 'user')
+        console.log(this.users)
+
+        this.volunteers = data.filter(user => user.type === 'volunteer')
+        console.log(this.volunteers)
+
+        this.translators = data.filter(user => user.type === 'translator')
+        console.log(this.translators)
+
+      }, error => alert(error))
   }
+  
 }

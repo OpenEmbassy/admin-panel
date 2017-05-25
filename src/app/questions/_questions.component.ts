@@ -1,10 +1,10 @@
 // Thanks to Jim for assistance with creating cards with Grouped Questions
 
 import { Component, OnInit, Input } from '@angular/core';
-import { UsersService } from '../data/users.service';
+import { QuestionsService } from '../data/questions.service';
 
 interface GroupedQuestions {
-  [user: string]: any[];
+  [status: string]: any[];
 };
 
 @Component({
@@ -17,10 +17,10 @@ export class QuestionsComponent implements OnInit {
   userIds: string[];
   page: number = 1;
 
-  constructor(private usersService: UsersService) { }
+  constructor(private questionsService: QuestionsService) { }
 
   ngOnInit() {
-     this.usersService.getAllUsers()
+     this.questionsService.getQuestions()
     .subscribe(questions => {
       this.questions = questions.reduce((acc: GroupedQuestions, question) => {
           if (acc[question.userId]) {
