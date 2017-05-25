@@ -1,8 +1,11 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { UsersService } from '../data/users.service';
+<<<<<<< HEAD
 import { ElementHighLighter } from '../stylying-directives/element-highlight.directive'
 import * as _ from 'lodash';
 
+=======
+>>>>>>> front-end
 
 @Component({
   selector: 'app-users',

@@ -8,9 +8,15 @@ export class QuestionsService {
   
   constructor(private api: ApiService
   ) { }
+<<<<<<< HEAD
 
   getQuestions() {
     return this.api.get('http://localhost:4050/v1/admin/questions', { headers: { 'x-access-token': this.token } })
+=======
+  
+  getQuestions() {
+    return this.api.get('https://jsonplaceholder.typicode.com/posts')
+>>>>>>> front-end
     .map(response => response.json());
   }
 }

@@ -13,17 +13,13 @@ import { QuestionsService } from './data/questions.service';
 import { UsersComponent } from './users/users.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HeaderComponent } from './header/header.component';
-import { ElementHighLighter } from './stylying-directives/element-highlight.directive';
-// import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     QuestionsComponent,
-    HeaderComponent,
-    ElementHighLighter,
-    // LoginComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

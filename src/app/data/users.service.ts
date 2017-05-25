@@ -10,8 +10,13 @@ export class UsersService {
   ) {}
 
   getAllUsers() {
+<<<<<<< HEAD
     // return this.api.get('/users/all');
     return this.api.get('http://localhost:4050/v1/admin/users', { headers: { 'x-access-token': this.token } })
       .map(response => response.json());
+=======
+    return this.api.get('https://jsonplaceholder.typicode.com/posts')
+    .map(response => response.json());
+>>>>>>> front-end
   }
 }
