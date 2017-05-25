@@ -9,7 +9,6 @@
 
 <body>
     <div>
-<<<<<<< HEAD
         <md-tab-group>
             <md-tab label="All Questions ({{questions.length}})">
                 <!--<form>
@@ -41,31 +40,6 @@
                     <pagination-controls (pageChange)="page = $event"></pagination-controls>
                 </div>
             </md-tab>
-=======
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-            <thead>
-                <tr>
-                    <th class="mdl-data-table__cell--non-numeric">User ID</th>
-                    <th>Question No</th>
-                    <th>Question Title</th>
-                    <th>Question</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let question of questions | paginate: {
-        itemsPerPage: 10,
-        currentPage: page} ">
-                    <td>{{question.userId}}</td>
-                    <td>{{question.id}} </td>
-                    <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
-                    <td class="mdl-data-table__cell--non-numeric">{{question.body}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-</body>
->>>>>>> front-end
 
             <md-tab label="Status Open ({{statusOpen.length}})">
                 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
@@ -86,7 +60,6 @@
                 </table>
             </md-tab>
 
-<<<<<<< HEAD
             <md-tab label="Status Picked-Up ({{statusPickedUp.length}})">
                 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
                     <thead class="orangeTH">
@@ -152,8 +125,3 @@
         </md-list>
     </md-card-content>
 </md-card>-->
-=======
-<div class="has-text-centered">
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
-</div>
->>>>>>> front-end
