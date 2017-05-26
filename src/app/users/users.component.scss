@@ -11,7 +11,8 @@ body {
 
 .mdl-data-table {
     table-layout: fixed;
-    width: 65%;
+    width: 60%;
+    margin: 15px auto 15px 15px;
 }
 
 .mdl-data-table th,
@@ -20,6 +21,11 @@ body {
     font-size: 14px;
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+
+.mdl-data-table th {
+    background: grey;
+    color: white;
 }
 
 .mdl-data-table td {
