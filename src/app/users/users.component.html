@@ -1,141 +1,120 @@
-<html>
-
-<head>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
-    <script src="/node_modules/material-design-lite/material.min.js"></script>
-</head>
-
-
-<body>
-    <!-- Accent-colored raised button with ripple -->
-
-
-    <div>
-        <md-tab-group>
-            <md-tab label=" All Users ({{data.length}})">
-                <!--<form>
+<div>
+    <md-tab-group>
+        <md-tab label=" All Users ({{data.length}})">
+            <!--<form>
                     <md-select multiple placeholder="Select User Type" [(ngModel)]="selectedValue" name="id">
                         <md-option *ngFor="let id of data" [value]="id.userType">
                             {{id.userType}}
                         </md-option>
                     </md-select>
                 </form>-->
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <thead>
-                        <tr>
-                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>User Type</th>
-                        </tr>
-                    </thead>
-                    <tbody *ngFor="let i of data | paginate: {itemsPerPage: 20,currentPage: page} ">
-                        <tr>
-                            <td>{{i.userId}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{i.firstName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{i.lastName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{i.type}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="has-text-centered">
-                    <pagination-controls (pageChange)="page = $event"></pagination-controls>
-                </div>
-            </md-tab>
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>User Type</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let i of data | paginate: {itemsPerPage: 20,currentPage: page} ">
+                    <tr>
+                        <td>{{i.userId}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{i.firstName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{i.lastName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{i.type}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="has-text-centered">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </md-tab>
 
-            <md-tab label="Admins ({{admins.length}})">
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <thead>
-                        <tr>
-                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>User Type</th>
-                        </tr>
-                    </thead>
-                    <tbody *ngFor="let user of admins">
-                        <tr>
-                            <td>{{user.userId}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </md-tab>
+        <md-tab label="Admins ({{admins.length}})">
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>User Type</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of admins">
+                    <tr>
+                        <td>{{user.userId}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-tab>
 
-            <md-tab label="Users ({{users.length}})">
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <thead>
-                        <tr>
-                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>User Type</th>
-                        </tr>
-                    </thead>
-                    <tbody *ngFor="let user of users">
-                        <tr>
-                            <td>{{user.userId}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </md-tab>
+        <md-tab label="Users ({{users.length}})">
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>User Type</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of users">
+                    <tr>
+                        <td>{{user.userId}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-tab>
 
-            <md-tab label="Translators ({{translators.length}})">
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <thead>
-                        <tr>
-                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>User Type</th>
-                        </tr>
-                    </thead>
-                    <tbody *ngFor="let user of translators">
-                        <tr>
-                            <td>{{user.userId}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </md-tab>
+        <md-tab label="Translators ({{translators.length}})">
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>User Type</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of translators">
+                    <tr>
+                        <td>{{user.userId}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-tab>
 
-            <md-tab label="Volunteers ({{volunteers.length}})">
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <thead>
-                        <tr>
-                            <th class="mdl-data-table__cell--non-numeric">User ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>User Type</th>
-                        </tr>
-                    </thead>
-                    <tbody *ngFor="let user of volunteers">
-                        <tr>
-                            <td>{{user.userId}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
-                            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </md-tab>
+        <md-tab label="Volunteers ({{volunteers.length}})">
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>User Type</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of volunteers">
+                    <tr>
+                        <td>{{user.userId}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-tab>
 
-        </md-tab-group>
+    </md-tab-group>
 
-    </div>
-</body>
-
-</html>
-
-
-
-
-<!--{{user.firstName} {{user.lastName}} {{user.email}} {{user.active}} {{user.type}}-->
+</div>

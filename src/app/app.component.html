@@ -1,1 +1,10 @@
-<app-header></app-header>
+<div>
+    <md-toolbar color="primary">
+        <span routerLink="/">Open Embassy Admin-Panel</span>
+        <!--<a md-button routerLink="/">login</a>-->
+        <a md-button routerLink="/users">Users</a>
+        <a md-button routerLink="/questions">Questions</a>
+    </md-toolbar>
+    <div class="app-content">
+        <router-outlet></router-outlet>
+    </div>

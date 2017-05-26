@@ -12,8 +12,8 @@ import { UsersService } from './data/users.service';
 import { QuestionsService } from './data/questions.service';
 import { UsersComponent } from './users/users.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { HeaderComponent } from './header/header.component';
 import { ElementHighLighter } from './stylying-directives/element-highlight.directive';
+import { OeUserTabComponent } from './users/oe-user-tab/oe-user-tab.component';
 // import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -21,8 +21,8 @@ import { ElementHighLighter } from './stylying-directives/element-highlight.dire
     AppComponent,
     UsersComponent,
     QuestionsComponent,
-    HeaderComponent,
     ElementHighLighter,
+    OeUserTabComponent,
     // LoginComponent
   ],
   imports: [
