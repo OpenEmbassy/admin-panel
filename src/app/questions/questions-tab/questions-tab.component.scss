@@ -12,6 +12,7 @@ body {
     table-layout: fixed;
     width: 95%;
     margin: 15px auto 15px 15px;
+    align: center;
 }
 
 .mdl-data-table th,
@@ -57,7 +58,7 @@ body {
 
 .has-text-centered {
     margin: 50px auto;
-    width: 50%;
+    width: 100%;
     text-align: center;
     font-family: tahoma;
 }
