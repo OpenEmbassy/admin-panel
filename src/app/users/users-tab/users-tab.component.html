@@ -1,0 +1,21 @@
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
+        <tr>
+            <th class="mdl-data-table__cell--non-numeric">User ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Type</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let i of data | paginate: {itemsPerPage: 20,currentPage: page} ">
+        <tr>
+            <td>{{i.userId}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{i.firstName}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{i.lastName}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{i.type}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="has-text-centered">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

@@ -12,12 +12,16 @@ import { UsersService } from './data/users.service';
 import { QuestionsService } from './data/questions.service';
 import { UsersComponent } from './users/users.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { UsersTabComponent } from './users/users-tab/users-tab.component';
+import { QuestionsTabComponent } from './questions/questions-tab/questions-tab.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     QuestionsComponent,
+    UsersTabComponent,
+    QuestionsTabComponent,
   ],
   imports: [
     BrowserModule,

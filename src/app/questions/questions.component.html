@@ -1,114 +1,16 @@
 <div>
     <md-tab-group>
         <md-tab label="All Questions ({{questions.length}})">
-            <!--<form>
-                    <md-select multiple placeholder="Select User Type" [(ngModel)]="selectedValue" name="id">
-                        <md-option *ngFor="let id of data" [value]="id.userType">
-                            {{id.userType}}
-                        </md-option>
-                    </md-select>
-                </form>-->
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                <thead>
-                    <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Title</th>
-                        <th class="mdl-data-table__cell--non-numeric">Content</th>
-                        <th>Status</th>
-                        <th>Question ID</th>
-                    </tr>
-                </thead>
-                <tbody *ngFor="let i of questions | paginate: {itemsPerPage: 20,currentPage: page} ">
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">{{i.title}}</td>
-                        <td class="mdl-data-table__cell--non-numeric">{{i.content}}</td>
-                        <td [ngClass]="{red: i.status === 'open', orange: i.status === 'picked-up', green: i.status === 'answered'}">{{i.status}}</td>
-                        <td>{{i.questionId}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="has-text-centered">
-                <pagination-controls (pageChange)="page = $event"></pagination-controls>
-            </div>
+            <app-questions-tab [questions]="questions"></app-questions-tab>
         </md-tab>
-
-        <md-tab label="Status Open ({{statusOpen.length}})">
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                <thead class="redTH">
-                    <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Title</th>
-                        <th class="mdl-data-table__cell--non-numeric">Content</th>
-                        <th>Question ID</th>
-                    </tr>
-                </thead>
-                <tbody *ngFor="let question of statusOpen">
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
-                        <td class="mdl-data-table__cell--non-numeric">{{question.content}}</td>
-                        <td>{{question.questionId}}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <md-tab label="Open ({{statusOpen.length}})">
+            <app-questions-tab [questions]="statusOpen"></app-questions-tab>
         </md-tab>
-
-        <md-tab label="Status Picked-Up ({{statusPickedUp.length}})">
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                <thead class="orangeTH">
-                    <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Title</th>
-                        <th class="mdl-data-table__cell--non-numeric">Content</th>
-                        <th>Status</th>
-                        <!--<th>Question ID</th>-->
-                    </tr>
-                </thead>
-                <tbody *ngFor="let question of statusPickedUp">
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
-                        <td class="mdl-data-table__cell--non-numeric content">{{question.content}}</td>
-                        <td>{{question.status}}</td>
-                        <!--<td>{{question.questionId}}</td>-->
-                    </tr>
-                </tbody>
-            </table>
+        <md-tab label="PickedUp ({{statusPickedUp.length}})">
+            <app-questions-tab [questions]="statusPickedUp"></app-questions-tab>
         </md-tab>
-
-        <md-tab label="Status Answered ({{statusAnswered.length}})">
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                <thead class="greenTH">
-                    <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Title</th>
-                        <th class="mdl-data-table__cell--non-numeric">Content</th>
-                        <th>Status</th>
-                        <!--<th>Question ID</th>-->
-                    </tr>
-                </thead>
-                <tbody *ngFor="let question of statusAnswered">
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
-                        <td class="mdl-data-table__cell--non-numeric content">{{question.content}}</td>
-                        <td>{{question.status}}</td>
-                        <!--<td>{{question.questionId}}</td>-->
-                    </tr>
-                </tbody>
-            </table>
+        <md-tab label="Answered ({{statusAnswered.length}})">
+            <app-questions-tab [questions]="statusAnswered"></app-questions-tab>
         </md-tab>
-
     </md-tab-group>
-
 </div>
-
-
-
-<!--<md-card *ngFor="let userId of userIds | paginate: {
-        itemsPerPage: 1,
-        currentPage: page}">
-    <md-card-title> User: {{userId}} </md-card-title>
-    <md-card-content>
-        <md-list>
-            <md-list-item *ngFor="let question of questions[userId]">
-                <h4 md-line> Question No: {{question.id}} </h4>
-                <p md-line> {{question.title}} </p>
-                <p md-line class="demo-2"> {{question.body}} </p>
-            </md-list-item>
-        </md-list>
-    </md-card-content>
-</md-card>-->
