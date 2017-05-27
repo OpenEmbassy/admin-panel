@@ -2,17 +2,17 @@
 
     <thead *ngFor="let i of questions" [ngClass]="{redTH: i.status === 'open', orangeTH: i.status === 'picked-up', greenTH: i.status === 'answered'}">
         <tr>
-            <th>ID</th>
             <th class="mdl-data-table__cell--non-numeric">Title</th>
             <th class="mdl-data-table__cell--non-numeric">Content</th>
+            <th>ID</th>
         </tr>
     </thead>
 
     <tbody *ngFor="let i of questions">
         <tr>
-            <td>{{i.questionId}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{i.title}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{i.content}}</td>
+            <td>{{i.questionId}}</td>
         </tr>
     </tbody>
 </table>
