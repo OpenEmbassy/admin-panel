@@ -20,4 +20,14 @@ footer {
     color: #58bcb0;
 }
 
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';

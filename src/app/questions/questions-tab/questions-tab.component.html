@@ -1,24 +1,18 @@
 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
 
-    <thead>
+    <thead *ngFor="let i of questions" [ngClass]="{redTH: i.status === 'open', orangeTH: i.status === 'picked-up', greenTH: i.status === 'answered'}">
         <tr>
+            <th>ID</th>
             <th class="mdl-data-table__cell--non-numeric">Title</th>
             <th class="mdl-data-table__cell--non-numeric">Content</th>
-            <th>Status</th>
-            <th>ID</th>
         </tr>
     </thead>
 
-    <tbody *ngFor="let i of questions | paginate: {itemsPerPage: 20,currentPage: page} ">
+    <tbody *ngFor="let i of questions">
         <tr>
+            <td>{{i.questionId}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{i.title}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{i.content}}</td>
-            <td [ngClass]="{red: i.status === 'open', orange: i.status === 'picked-up', green: i.status === 'answered'}">{{i.status}}</td>
-            <td>{{i.questionId}}</td>
         </tr>
     </tbody>
 </table>
-
-<div class="has-text-centered">
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
-</div>

@@ -12,7 +12,6 @@ body {
     table-layout: fixed;
     width: 95%;
     margin: 15px auto 15px 15px;
-    align: center;
 }
 
 .mdl-data-table th,
@@ -31,34 +30,14 @@ body {
     width: 38%;
 }
 
-.red {
-    color: red;
-    font-weight: bold;
-}
-
-.green {
-    color: green;
-}
-
-.orange {
-    color: orange;
-}
-
 .redTH {
     background: #ef5d5f;
 }
 
 .greenTH {
-    background: #5dd55d;
+    background: #87c48e;
 }
 
 .orangeTH {
     background: #ffad33;
-}
-
-.has-text-centered {
-    margin: 50px auto;
-    width: 100%;
-    text-align: center;
-    font-family: tahoma;
 }
