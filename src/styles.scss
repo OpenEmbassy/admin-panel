@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-	margin: 0;
+    padding: auto;
+    margin: auto;
+    max-width: 1024px;
+}
+
+.ngx-pagination li.current {
+    background: #58bcb0;
 }
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
