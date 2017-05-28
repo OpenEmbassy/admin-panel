@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~material-design-lite/material.css';
 * {
     box-sizing: border-box;
 }
@@ -29,5 +31,3 @@ footer {
     background-color: #efefef;
     text-align: center;
 }
-
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';

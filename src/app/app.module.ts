@@ -15,6 +15,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { UsersTabComponent } from './users/users-tab/users-tab.component';
 import { QuestionsTabComponent } from './questions/questions-tab/questions-tab.component';
 import { AllQuestionsTabComponent } from './questions/all-questions-tab/all-questions-tab.component';
+import 'material-design-lite/material';
 
 @NgModule({
   declarations: [
