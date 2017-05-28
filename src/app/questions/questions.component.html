@@ -1,31 +1,7 @@
 <div>
     <md-tab-group>
         <md-tab label="All Questions ({{questions.length}})">
-            <!--<app-questions-tab [questions]="questions"></app-questions-tab>-->
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-
-                <thead class="oeTH">
-                    <tr>
-                        <th>Title</th>
-                        <th>Content</th>
-                        <th>Status</th>
-                        <!--<th>ID</th>-->
-                    </tr>
-                </thead>
-
-                <tbody *ngFor="let i of questions | paginate: {itemsPerPage: 20,currentPage: page} ">
-                    <tr>
-                        <!--<td>{{i.questionId}}</td>-->
-                        <td>{{i.title}}</td>
-                        <td>{{i.content}}</td>
-                        <td [ngClass]="{red: i.status === 'open', orange: i.status === 'picked-up', green: i.status === 'answered'}">{{i.status}}</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="has-text-centered">
-                <pagination-controls (pageChange)="page = $event"></pagination-controls>
-            </div>
+            <app-all-questions-tab [questions]="questions"></app-all-questions-tab>
         </md-tab>
 
         <md-tab label="Open ({{statusOpen.length}})">

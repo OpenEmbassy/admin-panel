@@ -20,14 +20,27 @@
     width: 38%;
 }
 
-.redTH {
-    background: #ef5d5f;
+.red {
+    color: red;
+    font-weight: bold;
 }
 
-.greenTH {
-    background: #87c48e;
+.green {
+    color: green;
 }
 
-.orangeTH {
-    background: #ffad33;
+.orange {
+    color: orange;
+}
+
+.mdl-data-table th {
+    background: #19535c;
+    color: white;
+}
+
+.has-text-centered {
+    margin: 50px auto;
+    width: 100%;
+    text-align: center;
+    font-family: tahoma;
 }
