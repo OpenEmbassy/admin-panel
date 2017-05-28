@@ -1,4 +1,4 @@
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 
     <thead class="oeTH">
         <tr>
@@ -9,7 +9,7 @@
         </tr>
     </thead>
 
-    <tbody *ngFor="let i of questions | paginate: {itemsPerPage: 20,currentPage: page} ">
+    <tbody *ngFor="let i of questions | paginate: {itemsPerPage: 5,currentPage: page} ">
         <tr>
             <!--<td>{{i.questionId}}</td>-->
             <td>{{i.title}}</td>

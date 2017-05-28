@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { UsersService } from '../data/users.service';
+import { ApiService } from '../data/api.service';
 
 @Component({
   selector: 'app-users',
@@ -8,19 +8,20 @@ import { UsersService } from '../data/users.service';
 })
 
 export class UsersComponent implements OnInit {
-  data: string[] = []
+  allUsers: string[] = []
   admins: string[] = []
   users: string[] = []
   volunteers: string[] = []
   translators: string[] = []
+  page = 1
 
-  constructor(private usersService: UsersService) {
+  constructor(private ApiService: ApiService) {
   }
 
   ngOnInit() {
-    this.usersService.getAllUsers()
+    this.ApiService.getAllUsers()
     .subscribe(data => {
-      this.data = data;
+      this.allUsers = data;
       this.admins = data.filter(user => user.type === 'admin')
       this.users = data.filter(user => user.type === 'user')
       this.volunteers = data.filter(user => user.type === 'volunteer')

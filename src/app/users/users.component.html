@@ -1,19 +1,19 @@
 <div>
     <md-tab-group>
-        <md-tab label="All Users ({{data.length}})">
-            <app-users-tab [data]="data"></app-users-tab>
+        <md-tab label="All Users ({{allUsers.length}})">
+            <app-users-tab [users]="allUsers"></app-users-tab>
         </md-tab>
         <md-tab label="Users ({{users.length}})">
-            <app-users-tab [data]="users"></app-users-tab>
+            <app-users-tab [users]="users"></app-users-tab>
         </md-tab>
         <md-tab label="Administrators ({{admins.length}})">
-            <app-users-tab [data]="admins"></app-users-tab>
+            <app-users-tab [users]="admins"></app-users-tab>
         </md-tab>
         <md-tab label="Translators ({{translators.length}})">
-            <app-users-tab [data]="translators"></app-users-tab>
+            <app-users-tab [users]="translators"></app-users-tab>
         </md-tab>
         <md-tab label="Volunteers ({{volunteers.length}})">
-            <app-users-tab [data]="volunteers"></app-users-tab>
+            <app-users-tab [users]="volunteers"></app-users-tab>
         </md-tab>
     </md-tab-group>
 </div>

@@ -1,3 +1,4 @@
+import 'hammerjs'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,8 +9,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiService } from './data/api.service';
-import { UsersService } from './data/users.service';
-import { QuestionsService } from './data/questions.service';
 import { UsersComponent } from './users/users.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { UsersTabComponent } from './users/users-tab/users-tab.component';
@@ -36,9 +35,7 @@ import 'material-design-lite/material';
     NgxPaginationModule
   ],
   providers: [
-    ApiService,
-    UsersService,
-    QuestionsService
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

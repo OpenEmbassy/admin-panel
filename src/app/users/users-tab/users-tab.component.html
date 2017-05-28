@@ -7,12 +7,12 @@
             <th>User Type</th>
         </tr>
     </thead>
-    <tbody *ngFor="let i of data | paginate: {itemsPerPage: 20,currentPage: page} ">
+    <tbody *ngFor="let user of users | paginate: {itemsPerPage: 10, currentPage: page} ">
         <tr>
-            <td>{{i.userId}}</td>
-            <td class="mdl-data-table__cell--non-numeric">{{i.firstName}}</td>
-            <td class="mdl-data-table__cell--non-numeric">{{i.lastName}}</td>
-            <td class="mdl-data-table__cell--non-numeric">{{i.type}}</td>
+            <td>{{user.userId}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
         </tr>
     </tbody>
 </table>

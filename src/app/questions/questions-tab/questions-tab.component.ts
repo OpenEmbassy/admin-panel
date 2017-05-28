@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class QuestionsTabComponent implements OnInit {
   @Input() questions;
+  page = 1
 
   constructor() { }
 
