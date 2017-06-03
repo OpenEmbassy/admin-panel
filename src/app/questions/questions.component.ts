@@ -13,7 +13,6 @@ export class QuestionsComponent implements OnInit {
   statusOpen: string[] = []
   statusPickedUp: string[] = []
   statusAnswered: string[] = []
-  page = 1
   
   constructor(private ApiService: ApiService) { }
   

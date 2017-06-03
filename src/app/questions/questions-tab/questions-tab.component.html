@@ -8,7 +8,7 @@
         </tr>
     </thead>
 
-    <tbody *ngFor="let question of questions | paginate: {itemsPerPage: 5,currentPage: page}">
+    <tbody *ngFor="let question of questions">
         <tr>
             <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{question.content}}</td>
@@ -16,8 +16,3 @@
         </tr>
     </tbody>
 </table>
-
-
-<!--<div class="has-text-centered">
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
-</div>-->

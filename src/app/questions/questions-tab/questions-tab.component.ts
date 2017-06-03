@@ -6,8 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./questions-tab.component.scss']
 })
 export class QuestionsTabComponent implements OnInit {
-  @Input() questions;
-  page = 1
+  @Input() questions
 
   constructor() { }
 
