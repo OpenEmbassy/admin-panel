@@ -4,16 +4,15 @@
             <th>Title</th>
             <th>Content</th>
             <th>Status</th>
-            <!--<th>ID</th>-->
         </tr>
     </thead>
 
-    <tbody *ngFor="let question of questions">
+    <tbody *ngFor="let question of questions | paginate: { itemsPerPage: 5, currentPage: page, totalItems: questions.length }">
         <tr>
-            <!--<td>{{i.questionId}}</td>-->
             <td>{{question.title}}</td>
             <td>{{question.content}}</td>
             <td [ngClass]="{red: question.status === 'open', orange: question.status === 'picked-up', green: question.status === 'answered'}">{{question.status}}</td>
         </tr>
     </tbody>
 </table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
