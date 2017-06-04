@@ -13,7 +13,6 @@ export class UsersComponent implements OnInit {
   users: string[] = []
   volunteers: string[] = []
   translators: string[] = []
-  page = 1
 
   constructor(private ApiService: ApiService) {
   }

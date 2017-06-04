@@ -7,7 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UsersTabComponent implements OnInit {
   @Input() users;
-  page = 1
 
   constructor() { }
 
