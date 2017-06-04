@@ -27,14 +27,6 @@ export class ApiService {
   getAllUsers() {
     return this.http.get('http://localhost:4050/v1/admin/users', this.getRequestOptions())
       .map(response => response.json())
-    // a loop for testing purposes only 
-    .map(users => {
-      for (let i = 0; i < 3; i++) {
-        users = users.concat(users)
-      }
-      return users
-    })
-    // end of loop
   }
   
   getRequestOptions(): RequestOptions {

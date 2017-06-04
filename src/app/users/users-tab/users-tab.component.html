@@ -7,7 +7,7 @@
             <th>User Type</th>
         </tr>
     </thead>
-    <tbody *ngFor="let user of users | paginate: {itemsPerPage: 5, currentPage: page} ">
+    <tbody *ngFor="let user of users">
         <tr>
             <td>{{user.userId}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
@@ -16,5 +16,3 @@
         </tr>
     </tbody>
 </table>
-
-<pagination-controls class="has-text-centered" (pageChange)="page = $event"></pagination-controls>
