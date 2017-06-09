@@ -13,7 +13,7 @@ export interface Question {
 
 export interface PageData {
   count: number
-  row: Question[]
+  rows: Question[]
 }
 
 @Injectable()
