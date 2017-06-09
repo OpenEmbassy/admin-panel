@@ -7,7 +7,7 @@
         </tr>
     </thead>
 
-    <tbody *ngFor="let question of questions | paginate: { itemsPerPage: 5, currentPage: page, totalItems: questions.length }">
+    <tbody *ngFor="let question of pageData.rows | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: pageData.count }">
         <tr>
             <td>{{question.title}}</td>
             <td>{{question.content}}</td>
@@ -15,4 +15,4 @@
         </tr>
     </tbody>
 </table>
-<pagination-controls class="has-text-centered" (pageChange)="page = $event"></pagination-controls>
+<pagination-controls class="has-text-centered" (pageChange)="onPageChange($event)"></pagination-controls>

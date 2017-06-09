@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApiService } from '../data/api.service';
+import { ApiService, PageData } from '../data/api.service';
 
+const PAGE_SIZE = 5
 
 @Component({
   selector: 'app-questions',
@@ -9,25 +10,46 @@ import { ApiService } from '../data/api.service';
 })
 
 export class QuestionsComponent implements OnInit {
-  questions: string[] = []
-  statusOpen: string[] = []
-  statusPickedUp: string[] = []
-  statusAnswered: string[] = []
-  page: number
-  
+  pageSize = PAGE_SIZE
+  allQuestionsPage: PageData
+  openQuestionsPage: PageData
+  pickedUpQuestionsPage: PageData
+  answeredQuestionsPage: PageData
+
   constructor(private ApiService: ApiService) { }
-  
+
   ngOnInit() {
-    this.ApiService.getQuestions()
-    .subscribe(questions => {
-      this.questions = questions
-      
-      this.statusAnswered = questions.filter(question => question.status === 'answered')
-      
-      this.statusPickedUp = questions.filter(question => question.status === 'picked-up')
-      
-      this.statusOpen = questions.filter(question => question.status === 'open')
-    },
-    error => alert(error))
+    this.onAllPageChange(1)
+    this.onOpenPageChange(1)
+    this.onPickedUpPageChange(1)
+    this.onAnsweredPageChange(1)
+  }
+
+  onAllPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE)
+      .subscribe(questionsPage => {
+        this.allQuestionsPage = questionsPage
+      }, error => window.alert(error))
+  }
+
+   onOpenPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE, 'open')
+      .subscribe(questionsPage => {
+        this.openQuestionsPage = questionsPage
+      }, error => window.alert(error))
+   }
+
+   onPickedUpPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE, 'picked-up')
+      .subscribe(questionsPage => {
+        this.pickedUpQuestionsPage = questionsPage
+      }, error => window.alert(error))
+   }
+
+   onAnsweredPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE, 'answered')
+      .subscribe(questionsPage => {
+        this.answeredQuestionsPage = questionsPage
+      }, error => window.alert(error))
   }
 }

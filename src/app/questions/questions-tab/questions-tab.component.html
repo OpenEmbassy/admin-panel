@@ -1,6 +1,6 @@
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 
-    <thead *ngIf="questions.length > 0" [ngClass]="{redTH: questions[0].status === 'open', orangeTH: questions[0].status === 'picked-up', greenTH: questions[0].status === 'answered'}">
+    <thead *ngIf="pageData.count > 0" [ngClass]="{redTH: status === 'open', orangeTH: status === 'picked-up', greenTH: status === 'answered'}">
         <tr>
             <th class="mdl-data-table__cell--non-numeric">Title</th>
             <th class="mdl-data-table__cell--non-numeric">Content</th>
@@ -8,7 +8,7 @@
         </tr>
     </thead>
 
-    <tbody *ngFor="let question of questions">
+    <tbody *ngFor="let question of pageData.rows | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: pageData.count}">
         <tr>
             <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{question.content}}</td>
@@ -16,3 +16,4 @@
         </tr>
     </tbody>
 </table>
+<pagination-controls class="has-text-centered" (pageChange)="onPageChange($event)"></pagination-controls>

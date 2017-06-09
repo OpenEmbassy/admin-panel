@@ -1,19 +1,19 @@
 <div>
     <md-tab-group>
-        <md-tab label="All Questions ({{questions.length}})">
-            <app-all-questions-tab [questions]="questions"></app-all-questions-tab>
+        <md-tab label="All Questions ({{allQuestionsPage?.count}})">
+            <app-all-questions-tab *ngIf="allQuestionsPage" [page]="allQuestionsPage.page" [pageSize]="pageSize" [pageData]="allQuestionsPage" (pageChange)="onAllPageChange($event)"></app-all-questions-tab>
         </md-tab>
 
-        <md-tab label="Open ({{statusOpen.length}})">
-            <app-questions-tab [questions]="statusOpen"></app-questions-tab>
+        <md-tab label="Open ({{openQuestionsPage?.count}})">
+            <app-questions-tab *ngIf="openQuestionsPage" [page]="openQuestionsPage.page" [pageSize]="pageSize" [pageData]="openQuestionsPage" (pageChange)="onOpenPageChange($event)" status="open"></app-questions-tab>
         </md-tab>
 
-        <md-tab label="PickedUp ({{statusPickedUp.length}})">
-            <app-questions-tab [questions]="statusPickedUp"></app-questions-tab>
+        <md-tab label="PickedUp ({{pickedUpQuestionsPage?.count}})">
+            <app-questions-tab *ngIf="pickedUpQuestionsPage" [page]="pickedUpQuestionsPage.page" [pageSize]="pageSize" [pageData]="pickedUpQuestionsPage" (pageChange)="onPickedUpPageChange($event)" status="picked-up"></app-questions-tab>
         </md-tab>
 
-        <md-tab label="Answered ({{statusAnswered.length}})">
-            <app-questions-tab [questions]="statusAnswered"></app-questions-tab>
+        <md-tab label="Answered ({{answeredQuestionsPage?.count}})">
+            <app-questions-tab *ngIf="answeredQuestionsPage" [page]="answeredQuestionsPage.page" [pageSize]="pageSize" [pageData]="answeredQuestionsPage" (pageChange)="onAnsweredPageChange($event)" status="answered"></app-questions-tab>
         </md-tab>
     </md-tab-group>
 </div>
