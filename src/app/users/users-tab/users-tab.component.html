@@ -7,7 +7,7 @@
             <th>User Type</th>
         </tr>
     </thead>
-    <tbody *ngFor="let user of users">
+    <tbody *ngFor="let user of pageData.rows | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: pageData.count, id: type}">
         <tr>
             <td>{{user.userId}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
@@ -16,3 +16,4 @@
         </tr>
     </tbody>
 </table>
+<pagination-controls class="has-text-centered" (pageChange)="onPageChange($event)" [id]="type"></pagination-controls>

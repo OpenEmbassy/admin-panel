@@ -71,7 +71,7 @@ getUsers(page: number, pageSize: number, type?: string) {
     const params = new URLSearchParams()
     params.set('page', page.toString())
     params.set('pageSize', pageSize.toString())
-    if (status) {
+    if (type) {
       params.set('type', type)
     }
     options.search = params

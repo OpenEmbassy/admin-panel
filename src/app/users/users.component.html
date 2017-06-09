@@ -1,19 +1,24 @@
 <div>
     <md-tab-group>
-        <md-tab label="All Users ({{allUsers.length}})">
-            <app-users-tab [users]="allUsers"></app-users-tab>
+        <md-tab label="All Users ({{allUsersPage?.count}})">
+            <app-users-tab *ngIf="allUsersPage" [page]="allUsersPage.page" [pageSize]="pageSize" [pageData]="allUsersPage" (pageChange)="onAllPageChange($event)" type="all"></app-users-tab>
         </md-tab>
-        <md-tab label="Users ({{users.length}})">
-            <app-users-tab [users]="users"></app-users-tab>
+
+        <md-tab label="Users ({{userUsersPage?.count}})">
+            <app-users-tab *ngIf="userUsersPage" [page]="userUsersPage.page" [pageSize]="pageSize" [pageData]="userUsersPage" (pageChange)="onUserPageChange($event)" type="user"></app-users-tab>
         </md-tab>
-        <md-tab label="Administrators ({{admins.length}})">
-            <app-users-tab [users]="admins"></app-users-tab>
+
+        <md-tab label="Admins ({{adminUsersPage?.count}})">
+            <app-users-tab *ngIf="adminUsersPage" [page]="adminUsersPage.page" [pageSize]="pageSize" [pageData]="adminUsersPage" (pageChange)="onAdminPageChange($event)" type="admin"></app-users-tab>
         </md-tab>
-        <md-tab label="Translators ({{translators.length}})">
-            <app-users-tab [users]="translators"></app-users-tab>
+
+        <md-tab label="Volunteers ({{volunteerUsersPage?.count}})">
+            <app-users-tab *ngIf="volunteerUsersPage" [page]="volunteerUsersPage.page" [pageSize]="pageSize" [pageData]="volunteerUsersPage" (pageChange)="onVolunteerPageChange($event)" type="volunteer"></app-users-tab>
         </md-tab>
-        <md-tab label="Volunteers ({{volunteers.length}})">
-            <app-users-tab [users]="volunteers"></app-users-tab>
+
+        <md-tab label="Translators ({{translatorUsersPage?.count}})">
+            <app-users-tab *ngIf="translatorUsersPage" [page]="translatorUsersPage.page" [pageSize]="pageSize" [pageData]="translatorUsersPage" (pageChange)="onTranslatorPageChange($event)" type="translator"></app-users-tab>
         </md-tab>
+
     </md-tab-group>
 </div>

@@ -6,6 +6,7 @@ import { Component, Output, Input, EventEmitter } from '@angular/core';
   templateUrl: './questions-tab.component.html',
   styleUrls: ['./questions-tab.component.scss']
 })
+  
 export class QuestionsTabComponent {
  @Input() page: number
   @Input() pageSize: number
