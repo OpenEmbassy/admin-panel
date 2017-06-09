@@ -1,5 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { ApiService } from '../data/api.service';
+import { ApiService, UserPageData } from '../data/api.service';
+
+const PAGE_SIZE = 10
 
 @Component({
   selector: 'app-users',
@@ -8,23 +10,56 @@ import { ApiService } from '../data/api.service';
 })
 
 export class UsersComponent implements OnInit {
-  allUsers: string[] = []
-  admins: string[] = []
-  users: string[] = []
-  volunteers: string[] = []
-  translators: string[] = []
 
-  constructor(private ApiService: ApiService) {
-  }
+pageSize = PAGE_SIZE
+  allUsersPage: UserPageData
+  userUsersPage: UserPageData
+  adminUsersPage: UserPageData
+  volunteerUsersPage: UserPageData
+  translatorUsersPage: UserPageData
+
+  constructor(private ApiService: ApiService) { }
 
   ngOnInit() {
-    this.ApiService.getAllUsers()
-    .subscribe(data => {
-      this.allUsers = data;
-      this.admins = data.filter(user => user.type === 'admin')
-      this.users = data.filter(user => user.type === 'user')
-      this.volunteers = data.filter(user => user.type === 'volunteer')
-      this.translators = data.filter(user => user.type === 'translator')
-    }, error => alert(error))
+    this.onAllPageChange(1)
+    this.onUserPageChange(1)
+    this.onAdminPageChange(1)
+    this.onVolunteerPageChange(1)
+    this.onTranslatorPageChange(1)
+  }
+
+  onAllPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE)
+      .subscribe(usersPage => {
+        this.onAllPageChange = usersPage
+      }, error => window.alert(error))
+  }
+
+   onUserPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE, 'user')
+      .subscribe(usersPage => {
+        this.userUsersPage = usersPage
+      }, error => window.alert(error))
+   }
+
+   onAdminPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE, 'admin')
+      .subscribe(usersPage => {
+        this.adminUsersPage = usersPage
+      }, error => window.alert(error))
+   }
+
+   onVolunteerPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE, 'volunteer')
+      .subscribe(usersPage => {
+        this.volunteerUsersPage = usersPage
+      }, error => window.alert(error))
+   }
+  
+   onTranslatorPageChange(page) {
+    this.ApiService.getQuestions(page, PAGE_SIZE, 'translator')
+      .subscribe(usersPage => {
+        this.translatorUsersPage = usersPage
+      }, error => window.alert(error))
   }
 }

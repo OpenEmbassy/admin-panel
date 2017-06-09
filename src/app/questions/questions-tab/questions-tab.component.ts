@@ -1,4 +1,4 @@
-import { PageData } from './../../data/api.service';
+import { QuestionsPageData } from './../../data/api.service';
 import { Component, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, Output, Input, EventEmitter } from '@angular/core';
 export class QuestionsTabComponent {
  @Input() page: number
   @Input() pageSize: number
-  @Input() pageData = <PageData>null
+  @Input() pageData = <QuestionsPageData>null
   @Input() status: string
   @Output() pageChange = new EventEmitter<number>()
 

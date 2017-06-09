@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApiService, PageData } from '../data/api.service';
+import { ApiService, QuestionsPageData } from '../data/api.service';
 
-const PAGE_SIZE = 5
+const PAGE_SIZE = 10
 
 @Component({
   selector: 'app-questions',
@@ -11,10 +11,10 @@ const PAGE_SIZE = 5
 
 export class QuestionsComponent implements OnInit {
   pageSize = PAGE_SIZE
-  allQuestionsPage: PageData
-  openQuestionsPage: PageData
-  pickedUpQuestionsPage: PageData
-  answeredQuestionsPage: PageData
+  allQuestionsPage: QuestionsPageData
+  openQuestionsPage: QuestionsPageData
+  pickedUpQuestionsPage: QuestionsPageData
+  answeredQuestionsPage: QuestionsPageData
 
   constructor(private ApiService: ApiService) { }
 
