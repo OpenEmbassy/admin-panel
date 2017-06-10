@@ -1,5 +1,12 @@
-<form  (ngSubmit)="onLogin(email.value, password.value)">
-      <input type="text" placeholder="email" name="email" #email required>
-      <input type="password" placeholder="password" name="password" #password required>
-      <button type="submit">Submit</button>    
+<form class="form" (ngSubmit)="onLogin(email.value, password.value)">
+      
+      <md-input-container class="form-full-width">
+            <input mdInput type="text" placeholder="email" floatPlaceholder="always" name="email" #email required >
+      </md-input-container>
+
+      <md-input-container class="form-full-width">
+            <input mdInput type="password" placeholder="password" floatPlaceholder="always" name="password" #password required>
+      </md-input-container>
+
+      <button class="buttons" md-raised-button type="submit">Login</button>
 </form>

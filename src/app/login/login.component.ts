@@ -5,12 +5,12 @@ import { ApiService } from '../data/api.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 
-export class Login {
+export class LoginComponent {
   
   constructor(private _auth: ApiService) {}
 

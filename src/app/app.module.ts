@@ -13,7 +13,7 @@ import { UsersComponent } from './users/users.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { UsersTabComponent } from './users/users-tab/users-tab.component';
 import { QuestionsTabComponent } from './questions/questions-tab/questions-tab.component';
-import { Login } from './login/login.component';
+import { LoginComponent } from './login/login.component';
 import { AllQuestionsTabComponent } from './questions/all-questions-tab/all-questions-tab.component';
 import 'material-design-lite/material';
 
@@ -22,7 +22,7 @@ import 'material-design-lite/material';
     AppComponent,
     UsersComponent,
     QuestionsComponent,
-    Login,
+    LoginComponent,
     UsersTabComponent,
     QuestionsTabComponent,
     AllQuestionsTabComponent
