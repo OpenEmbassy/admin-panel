@@ -55,7 +55,7 @@ pageSize = PAGE_SIZE
         this.volunteerUsersPage = usersPage
       }, error => window.alert(error))
    }
-  
+
    onTranslatorPageChange(page) {
     this.ApiService.getUsers(page, PAGE_SIZE, 'translator')
       .subscribe(usersPage => {
