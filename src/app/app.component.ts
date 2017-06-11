@@ -1,5 +1,5 @@
-import { ApiService } from './data/api.service';
 import { Component } from '@angular/core';
+import { ApiService } from './data/api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+
+  constructor(private _auth: ApiService){ }
+
+  logout() {
+    this._auth.logout()
+  }
+  get user(): any {
+      return localStorage.getItem('userName');
+  }
+ 
+
 }
