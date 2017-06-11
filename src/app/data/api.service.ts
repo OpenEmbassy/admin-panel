@@ -53,7 +53,7 @@ export class ApiService {
     }
     
     logout() {
-      localStorage.removeItem('x-access-token');
+      localStorage.clear();
     }
     
     getQuestions(page: number, pageSize: number, status?: string) {
