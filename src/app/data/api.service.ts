@@ -54,6 +54,7 @@ export class ApiService {
     
     logout() {
       localStorage.clear();
+      return this.http.delete('http://localhost:4050/v1/auth/logout') ;
     }
     
     getQuestions(page: number, pageSize: number, status?: string) {

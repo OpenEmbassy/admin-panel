@@ -22,7 +22,6 @@ export class LoginComponent {
       localStorage.setItem('x-access-token', data.jwt)
       localStorage.setItem('userType', data.profile.type)
       localStorage.setItem('userName', data.profile.firstName)
-      alert('Welcome '+ data.profile.firstName)
       this._Router.navigate(['questions'])
     },
     
