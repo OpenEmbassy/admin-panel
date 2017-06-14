@@ -1,4 +1,4 @@
-<form class="form" (ngSubmit)="onLogin(email.value, password.value)">
+<form class="form" (ngSubmit)="onLogin(email.value, password.value)" #loginForm="ngForm">
       
       <md-input-container class="form-full-width">
             <input mdInput type="text" placeholder="email" floatPlaceholder="always" name="email" #email required >
@@ -8,5 +8,5 @@
             <input mdInput type="password" placeholder="password" floatPlaceholder="always" name="password" #password required>
       </md-input-container>
 
-      <button class="buttons" md-raised-button type="submit">Login</button>
+      <button class="buttons" md-raised-button type="submit" [disabled]="!loginForm.form.valid">Login</button>
 </form>

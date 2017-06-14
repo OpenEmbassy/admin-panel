@@ -16,6 +16,7 @@ import { QuestionsTabComponent } from './questions/questions-tab/questions-tab.c
 import { LoginComponent } from './login/login.component';
 import { AllQuestionsTabComponent } from './questions/all-questions-tab/all-questions-tab.component';
 import 'material-design-lite/material';
+import { AuthGuard } from './login/auth.guard';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import 'material-design-lite/material';
     NgxPaginationModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
