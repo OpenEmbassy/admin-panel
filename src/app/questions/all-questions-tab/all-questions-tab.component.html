@@ -3,6 +3,7 @@
         <tr>
             <th>Title</th>
             <th>Content</th>
+            <th>Created At</th>
             <th>Status</th>
         </tr>
     </thead>
@@ -11,6 +12,7 @@
         <tr>
             <td>{{question.title}}</td>
             <td>{{question.content}}</td>
+            <td>{{question.createdAt | date:'medium'}}</td>
             <td [ngClass]="{red: question.status === 'open', orange: question.status === 'picked-up', green: question.status === 'answered'}">{{question.status}}</td>
         </tr>
     </tbody>
