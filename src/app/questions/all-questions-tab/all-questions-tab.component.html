@@ -2,7 +2,7 @@
     <thead class="oeTH">
         <tr>
             <th>Title</th>
-            <th>Content</th>
+            <!--<th>Content</th>-->
             <th>Created At</th>
             <th>Status</th>
         </tr>
@@ -11,7 +11,7 @@
     <tbody *ngFor="let question of pageData.rows | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: pageData.count, id: 'all' }">
         <tr>
             <td>{{question.title}}</td>
-            <td>{{question.content}}</td>
+            <!--<td>{{question.content}}</td>-->
             <td>{{question.createdAt | date:'medium'}}</td>
             <td [ngClass]="{red: question.status === 'open', orange: question.status === 'picked-up', green: question.status === 'answered'}">{{question.status}}</td>
         </tr>
