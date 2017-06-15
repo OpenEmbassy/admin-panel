@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { ApiService, QuestionsPageData } from '../data/api.service';
 
 const PAGE_SIZE = 10
@@ -16,6 +16,7 @@ export class QuestionsComponent implements OnInit {
   pickedUpQuestionsPage: QuestionsPageData
   answeredQuestionsPage: QuestionsPageData
 
+
   constructor(private ApiService: ApiService) { }
 
   ngOnInit() {
@@ -27,29 +28,29 @@ export class QuestionsComponent implements OnInit {
 
   onAllPageChange(page) {
     this.ApiService.getQuestions(page, PAGE_SIZE)
-      .subscribe(questionsPage => {
-        this.allQuestionsPage = questionsPage
-      }, error => window.alert(error))
+    .subscribe(questionsPage => {
+      this.allQuestionsPage = questionsPage
+    }, error => window.alert(error))
   }
 
-   onOpenPageChange(page) {
+  onOpenPageChange(page) {
     this.ApiService.getQuestions(page, PAGE_SIZE, 'open')
-      .subscribe(questionsPage => {
-        this.openQuestionsPage = questionsPage
-      }, error => window.alert(error))
-   }
+    .subscribe(questionsPage => {
+      this.openQuestionsPage = questionsPage
+    }, error => window.alert(error))
+  }
 
-   onPickedUpPageChange(page) {
+  onPickedUpPageChange(page) {
     this.ApiService.getQuestions(page, PAGE_SIZE, 'picked-up')
-      .subscribe(questionsPage => {
-        this.pickedUpQuestionsPage = questionsPage
-      }, error => window.alert(error))
-   }
+    .subscribe(questionsPage => {
+      this.pickedUpQuestionsPage = questionsPage
+    }, error => window.alert(error))
+  }
 
-   onAnsweredPageChange(page) {
+  onAnsweredPageChange(page) {
     this.ApiService.getQuestions(page, PAGE_SIZE, 'answered')
-      .subscribe(questionsPage => {
-        this.answeredQuestionsPage = questionsPage
-      }, error => window.alert(error))
+    .subscribe(questionsPage => {
+      this.answeredQuestionsPage = questionsPage
+    }, error => window.alert(error))
   }
 }

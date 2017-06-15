@@ -12,12 +12,12 @@ import { MdSnackBar } from '@angular/material'
 })
 
 export class LoginComponent {
-  
+
   email: string
   password: string
-  
+
   constructor(private _auth: ApiService, private _Router: Router, public snackBar: MdSnackBar) {}
-  
+
   onLogin() {
     // Validate inputs
     const credentials = {email: this.email, password: this.password}
@@ -28,11 +28,11 @@ export class LoginComponent {
       localStorage.setItem('userName', data.profile.firstName)
       this._Router.navigate(['questions'])
     }, err => {
-        this.snackBar.open('Invalid Credintials: ', 'Please check your email and/or password', {
-          duration: 5000
-        })
-        this._Router.navigate(['login'])
-      }
+      this.snackBar.open('Invalid Credintials: ', 'Please check your email and/or password', {
+        duration: 5000
+      })
+      this._Router.navigate(['login'])
+    }
     );
     this._Router.navigate(['']);
   }

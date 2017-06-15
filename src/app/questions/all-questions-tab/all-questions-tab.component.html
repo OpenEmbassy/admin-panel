@@ -1,19 +1,21 @@
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead class="oeTH">
         <tr>
-            <th>Title</th>
-            <!--<th>Content</th>-->
-            <th>Created At</th>
+            <th>ID</th>
+            <th class="mdl-data-table__cell--non-numeric">Title</th>
+            <th class="mdl-data-table__cell--non-numeric">Content</th>
             <th>Status</th>
+            <th>Created At</th>
         </tr>
     </thead>
 
     <tbody *ngFor="let question of pageData.rows | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: pageData.count, id: 'all' }">
         <tr>
-            <td>{{question.title}}</td>
-            <!--<td>{{question.content}}</td>-->
-            <td>{{question.createdAt | date:'medium'}}</td>
+            <td>{{question.questionId}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{question.content}}</td>
             <td [ngClass]="{red: question.status === 'open', orange: question.status === 'picked-up', green: question.status === 'answered'}">{{question.status}}</td>
+            <td>{{question.createdAt | date}}</td>
         </tr>
     </tbody>
 </table>

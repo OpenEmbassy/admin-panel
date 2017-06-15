@@ -8,7 +8,7 @@ import { ApiService } from './data/api.service';
 })
 export class AppComponent {
 
-  constructor(private _auth: ApiService){ }
+  constructor(private _auth: ApiService) { }
 
   logout() {
     this._auth.logout()
@@ -16,6 +16,4 @@ export class AppComponent {
   get user(): any {
       return localStorage.getItem('userName');
   }
- 
-
 }

@@ -8,7 +8,7 @@ import { Component, Output, Input, EventEmitter } from '@angular/core';
 })
 
 export class QuestionsTabComponent {
- @Input() page: number
+  @Input() page: number
   @Input() pageSize: number
   @Input() pageData = <QuestionsPageData>null
   @Input() status: string

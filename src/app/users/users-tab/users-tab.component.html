@@ -1,18 +1,22 @@
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
         <tr>
-            <th class="mdl-data-table__cell--non-numeric">User ID</th>
+            <th>User ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>User Type</th>
+            <th>Language</th>
+            <th class="mdl-data-table__cell--non-numeric">Email</th>
         </tr>
     </thead>
     <tbody *ngFor="let user of pageData.rows | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: pageData.count, id: type}">
         <tr>
             <td>{{user.userId}}</td>
-            <td class="mdl-data-table__cell--non-numeric">{{user.firstName}}</td>
-            <td class="mdl-data-table__cell--non-numeric">{{user.lastName}}</td>
-            <td class="mdl-data-table__cell--non-numeric">{{user.type}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.language}}</td>
+            <a href="mailto:{{user.email}}" target="_blank">
+                <td class="mdl-data-table__cell--non-numeric"> {{user.email}}</td>
+            </a>
         </tr>
     </tbody>
 </table>

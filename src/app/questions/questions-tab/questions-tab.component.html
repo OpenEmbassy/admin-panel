@@ -2,19 +2,19 @@
 
     <thead *ngIf="pageData.count > 0" [ngClass]="{redTH: status === 'open', orangeTH: status === 'picked-up', greenTH: status === 'answered'}">
         <tr>
+            <th>ID</th>
             <th class="mdl-data-table__cell--non-numeric">Title</th>
             <th class="mdl-data-table__cell--non-numeric">Content</th>
             <th>Created At</th>
-            <th>ID</th>
         </tr>
     </thead>
 
     <tbody *ngFor="let question of pageData.rows | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: pageData.count, id: status}">
         <tr>
+            <td>{{question.questionId}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{question.title}}</td>
             <td class="mdl-data-table__cell--non-numeric">{{question.content}}</td>
-            <td class="mdl-data-table__cell--non-numeric">{{question.createdAt | date:'medium'}}</td>
-            <td>{{question.questionId}}</td>
+            <td>{{question.createdAt | date:'medium'}}</td>
         </tr>
     </tbody>
 </table>
