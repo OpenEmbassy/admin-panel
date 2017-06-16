@@ -13,3 +13,11 @@
 .buttons {
     margin: 0 10px;
 }
+
+.invalidinput,
+.unauthoriseduser {
+    width: 90%;
+    margin: 20px 10px;
+    color: darkred;
+    font: 13px;
+}

@@ -1,12 +1,16 @@
 <form class="form" (ngSubmit)="onLogin()" #loginForm="ngForm">
 
     <md-input-container class="form-full-width">
-        <input mdInput type="text" placeholder="email" floatPlaceholder="always" name="email" [(ngModel)]="email" required>
+        <input mdInput type="text" placeholder="email" floatPlaceholder="always" name="email" [(ngModel)]="email" (ngModelChange)="invalidCredentials=false || unauthoriseduser=false" required>
     </md-input-container>
 
     <md-input-container class="form-full-width">
-        <input mdInput type="password" placeholder="password" floatPlaceholder="always" name="password" [(ngModel)]="password" required>
+        <input mdInput type="password" placeholder="password" floatPlaceholder="always" name="password" [(ngModel)]="password" (ngModelChange)="invalidCredentials=false || unauthoriseduser=false" required>
     </md-input-container>
 
     <button class="buttons" md-raised-button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+
+    <p class="invalidinput" *ngIf="invalidCredentials">Invalid Credintials: Please check your email and/or password</p>
+    <p class="unauthoriseduser" *ngIf="unauthoriseduser">Your are unauthorised user: Please contact the system administrator to report an error</p>
+
 </form>

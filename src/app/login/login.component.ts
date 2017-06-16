@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { ApiService } from '../data/api.service';
 import { NgForm } from '@angular/forms';
-import { MdSnackBar } from '@angular/material'
 
 @Component({
   selector: 'app-login',
@@ -12,28 +11,30 @@ import { MdSnackBar } from '@angular/material'
 })
 
 export class LoginComponent {
-
+  
   email: string
   password: string
-
-  constructor(private _auth: ApiService, private _Router: Router, public snackBar: MdSnackBar) {}
-
+  invalidCredentials = false
+  unauthoriseduser = false
+  
+  constructor(private _apiService: ApiService, private _router: Router) { }
+  
   onLogin() {
     // Validate inputs
-    const credentials = {email: this.email, password: this.password}
-    this._auth.login(credentials)
+    const credentials = { email: this.email, password: this.password }
+    this._apiService.login(credentials)
     .subscribe(data => {
       localStorage.setItem('x-access-token', data.jwt)
       localStorage.setItem('userType', data.profile.type)
       localStorage.setItem('userName', data.profile.firstName)
-      this._Router.navigate(['questions'])
+      this._router.navigate(['questions'])
     }, err => {
-      this.snackBar.open('Invalid Credintials: ', 'Please check your email and/or password', {
-        duration: 5000
+      if (err.status === 403) {
+        this.unauthoriseduser = true
+      } else if (err.status !== 403) {
+        this.invalidCredentials = true
+      }
+      this._router.navigate([''])
       })
-      this._Router.navigate(['login'])
-    }
-    );
-    this._Router.navigate(['']);
   }
-}
+  }

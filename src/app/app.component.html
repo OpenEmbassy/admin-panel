@@ -2,16 +2,14 @@
     <md-toolbar>
         <span>Open Embassy Admin-Panel</span>
         <a md-button class="spacer"> </a>
-        <a md-button *ngIf="_auth.isLoggedIn()" routerLink="/users">Users</a>
-        <a md-button *ngIf="_auth.isLoggedIn()" routerLink="/questions">Questions</a>
-        <a md-button *ngIf="_auth.isLoggedIn()" (click)="logout()" [routerLink]="['/login']">Logout</a>
+        <a md-button *ngIf="apiService.isLoggedIn()" routerLink="/users">Users</a>
+        <a md-button *ngIf="apiService.isLoggedIn()" routerLink="/questions">Questions</a>
+        <a md-button *ngIf="apiService.isLoggedIn()" (click)="logout()" [routerLink]="['/login']">Logout</a>
     </md-toolbar>
     <div class="copyright">designed &amp; coded by HYF Class 7 @2017</div>
     <div style="height: 30px"></div>
 
     <div class="app-content">
-        <h5 *ngIf="_auth.isLoggedIn()"> Welcome {{user}}, here is a glance on the latest updates!</h5>
-        <hr *ngIf="_auth.isLoggedIn()">
         <router-outlet></router-outlet>
     </div>
 </div>

@@ -8,10 +8,10 @@ import { ApiService } from './data/api.service';
 })
 export class AppComponent {
 
-  constructor(private _auth: ApiService) { }
+  constructor(private apiService: ApiService) { }
 
   logout() {
-    this._auth.logout()
+    this.apiService.logout()
   }
   get user(): any {
       return localStorage.getItem('userName');
