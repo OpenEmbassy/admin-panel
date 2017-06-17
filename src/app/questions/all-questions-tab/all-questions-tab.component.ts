@@ -10,9 +10,9 @@ export class AllQuestionsTabComponent {
   @Input() pageSize: number
   @Input() pageData: any
   @Output() pageChange = new EventEmitter<number>()
-
+  
   onPageChange(page) {
     this.pageChange.emit(page)
   }
-
+  
 }

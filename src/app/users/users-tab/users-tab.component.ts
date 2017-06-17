@@ -12,7 +12,7 @@ export class UsersTabComponent {
   @Input() type: string
   @Input() pageData = <UserPageData>null
   @Output() pageChange = new EventEmitter<number>()
-
+  
   onPageChange(page) {
     this.pageChange.emit(page)
   }

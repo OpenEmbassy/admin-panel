@@ -31,25 +31,25 @@ export interface UserPageData {
 
 @Injectable()
 export class ApiService {
-
+  
   constructor(
   private http: Http
   ) { }
-
+  
   login(credentials) {
     return this.http.post('http://localhost:4050/v1/auth/login', credentials)
     .map(response => response.json());
   }
-
+  
   isLoggedIn() {
     return localStorage.getItem('userType') === 'admin'
   }
-
+  
   logout() {
     localStorage.clear();
     return this.http.delete('http://localhost:4050/v1/auth/logout') ;
   }
-
+  
   getQuestions(page: number, pageSize: number, status?: string) {
     const options = this.getRequestOptions()
     const params = new URLSearchParams()
@@ -66,7 +66,7 @@ export class ApiService {
       return data;
     })
   }
-
+  
   getUsers(page: number, pageSize: number, type?: string) {
     const options = this.getRequestOptions()
     const params = new URLSearchParams()
@@ -83,13 +83,13 @@ export class ApiService {
       return data;
     })
   }
-
-
+  
+  
   getRequestOptions(): RequestOptions {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
     headers.append('x-access-token', localStorage.getItem('x-access-token'))
     return new RequestOptions({ headers })
   }
-
+  
 }

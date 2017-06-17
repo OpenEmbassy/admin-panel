@@ -1,23 +1,28 @@
 <div>
     <md-tab-group>
         <md-tab label="All Users ({{allUsersPage?.count}})">
-            <app-users-tab *ngIf="allUsersPage" [page]="allUsersPage.page" [pageSize]="pageSize" [pageData]="allUsersPage" (pageChange)="onAllPageChange($event)" type="all"></app-users-tab>
+            <app-users-tab *ngIf="allUsersPage" [page]="allUsersPage.page" [pageSize]="pageSize" [pageData]="allUsersPage" (pageChange)="onAllPageChange($event)"
+                type="all"></app-users-tab>
         </md-tab>
 
         <md-tab label="Users ({{userUsersPage?.count}})">
-            <app-users-tab *ngIf="userUsersPage" [page]="userUsersPage.page" [pageSize]="pageSize" [pageData]="userUsersPage" (pageChange)="onUserPageChange($event)" type="user"></app-users-tab>
+            <app-users-tab *ngIf="userUsersPage" [page]="userUsersPage.page" [pageSize]="pageSize" [pageData]="userUsersPage" (pageChange)="onUserPageChange($event)"
+                type="user"></app-users-tab>
         </md-tab>
 
         <md-tab label="Admins ({{adminUsersPage?.count}})">
-            <app-users-tab *ngIf="adminUsersPage" [page]="adminUsersPage.page" [pageSize]="pageSize" [pageData]="adminUsersPage" (pageChange)="onAdminPageChange($event)" type="admin"></app-users-tab>
+            <app-users-tab *ngIf="adminUsersPage" [page]="adminUsersPage.page" [pageSize]="pageSize" [pageData]="adminUsersPage" (pageChange)="onAdminPageChange($event)"
+                type="admin"></app-users-tab>
         </md-tab>
 
         <md-tab label="Volunteers ({{volunteerUsersPage?.count}})">
-            <app-users-tab *ngIf="volunteerUsersPage" [page]="volunteerUsersPage.page" [pageSize]="pageSize" [pageData]="volunteerUsersPage" (pageChange)="onVolunteerPageChange($event)" type="volunteer"></app-users-tab>
+            <app-users-tab *ngIf="volunteerUsersPage" [page]="volunteerUsersPage.page" [pageSize]="pageSize" [pageData]="volunteerUsersPage"
+                (pageChange)="onVolunteerPageChange($event)" type="volunteer"></app-users-tab>
         </md-tab>
 
         <md-tab label="Translators ({{translatorUsersPage?.count}})">
-            <app-users-tab *ngIf="translatorUsersPage" [page]="translatorUsersPage.page" [pageSize]="pageSize" [pageData]="translatorUsersPage" (pageChange)="onTranslatorPageChange($event)" type="translator"></app-users-tab>
+            <app-users-tab *ngIf="translatorUsersPage" [page]="translatorUsersPage.page" [pageSize]="pageSize" [pageData]="translatorUsersPage"
+                (pageChange)="onTranslatorPageChange($event)" type="translator"></app-users-tab>
         </md-tab>
 
     </md-tab-group>

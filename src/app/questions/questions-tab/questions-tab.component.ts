@@ -13,9 +13,9 @@ export class QuestionsTabComponent {
   @Input() pageData = <QuestionsPageData>null
   @Input() status: string
   @Output() pageChange = new EventEmitter<number>()
-
+  
   onPageChange(page) {
     this.pageChange.emit(page)
   }
-
+  
 }

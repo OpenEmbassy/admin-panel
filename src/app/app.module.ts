@@ -20,26 +20,26 @@ import { AuthGuard } from './login/auth.guard';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UsersComponent,
-    QuestionsComponent,
-    LoginComponent,
-    UsersTabComponent,
-    QuestionsTabComponent,
-    AllQuestionsTabComponent
+  AppComponent,
+  UsersComponent,
+  QuestionsComponent,
+  LoginComponent,
+  UsersTabComponent,
+  QuestionsTabComponent,
+  AllQuestionsTabComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule,
-    MaterialModule,
-    BrowserAnimationsModule,
-    NgxPaginationModule
+  BrowserModule,
+  FormsModule,
+  HttpModule,
+  AppRoutingModule,
+  MaterialModule,
+  BrowserAnimationsModule,
+  NgxPaginationModule
   ],
   providers: [
-    ApiService,
-    AuthGuard
+  ApiService,
+  AuthGuard
   ],
   bootstrap: [AppComponent]
 })

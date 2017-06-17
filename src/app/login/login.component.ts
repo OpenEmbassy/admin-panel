@@ -35,6 +35,6 @@ export class LoginComponent {
         this.invalidCredentials = true
       }
       this._router.navigate([''])
-      })
+    })
   }
-  }
+}

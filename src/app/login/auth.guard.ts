@@ -6,10 +6,10 @@ import { Observable } from 'rxjs/Rx'
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-
+  
   constructor(private apiService: ApiService, private _Router: Router) {
   }
-
+  
   canActivate() {
     if (this.apiService.isLoggedIn()) {
       return true
