@@ -1,19 +1,24 @@
 <div>
     <md-tab-group>
         <md-tab label="All Questions ({{allQuestionsPage?.count}})">
-            <app-all-questions-tab *ngIf="allQuestionsPage" [page]="allQuestionsPage.page" [pageSize]="pageSize" [pageData]="allQuestionsPage" (pageChange)="onAllPageChange($event)"></app-all-questions-tab>
+            <app-all-questions-tab *ngIf="allQuestionsPage" [page]="allQuestionsPage.page" [pageSize]="pageSize" [pageData]="allQuestionsPage"
+                (pageChange)="onAllPageChange($event)"></app-all-questions-tab>
         </md-tab>
 
         <md-tab label="Open ({{openQuestionsPage?.count}})">
-            <app-questions-tab *ngIf="openQuestionsPage" [page]="openQuestionsPage.page" [pageSize]="pageSize" [pageData]="openQuestionsPage" (pageChange)="onOpenPageChange($event)" status="open"></app-questions-tab>
+            <app-questions-tab *ngIf="openQuestionsPage" [page]="openQuestionsPage.page" [pageSize]="pageSize" [pageData]="openQuestionsPage"
+                (pageChange)="onOpenPageChange($event)" status="open"></app-questions-tab>
         </md-tab>
 
         <md-tab label="PickedUp ({{pickedUpQuestionsPage?.count}})">
-            <app-questions-tab *ngIf="pickedUpQuestionsPage" [page]="pickedUpQuestionsPage.page" [pageSize]="pageSize" [pageData]="pickedUpQuestionsPage" (pageChange)="onPickedUpPageChange($event)" status="picked-up"></app-questions-tab>
+            <app-questions-tab *ngIf="pickedUpQuestionsPage" [page]="pickedUpQuestionsPage.page" [pageSize]="pageSize" [pageData]="pickedUpQuestionsPage"
+                (pageChange)="onPickedUpPageChange($event)" status="picked-up"></app-questions-tab>
         </md-tab>
 
         <md-tab label="Answered ({{answeredQuestionsPage?.count}})">
-            <app-questions-tab *ngIf="answeredQuestionsPage" [page]="answeredQuestionsPage.page" [pageSize]="pageSize" [pageData]="answeredQuestionsPage" (pageChange)="onAnsweredPageChange($event)" status="answered"></app-questions-tab>
+            <app-questions-tab *ngIf="answeredQuestionsPage" [page]="answeredQuestionsPage.page" [pageSize]="pageSize" [pageData]="answeredQuestionsPage"
+                (pageChange)="onAnsweredPageChange($event)" status="answered"></app-questions-tab>
         </md-tab>
     </md-tab-group>
+
 </div>

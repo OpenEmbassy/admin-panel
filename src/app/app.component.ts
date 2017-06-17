@@ -7,13 +7,14 @@ import { ApiService } from './data/api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  constructor(private apiService: ApiService) { }
-
+  
+  constructor(public apiService: ApiService) { }
+  
   logout() {
     this.apiService.logout()
   }
+  
   get user(): any {
-      return localStorage.getItem('userName');
+    return localStorage.getItem('userName');
   }
 }

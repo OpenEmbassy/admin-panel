@@ -15,38 +15,38 @@ export class QuestionsComponent implements OnInit {
   openQuestionsPage: QuestionsPageData
   pickedUpQuestionsPage: QuestionsPageData
   answeredQuestionsPage: QuestionsPageData
-
-
+  
+  
   constructor(private ApiService: ApiService) { }
-
+  
   ngOnInit() {
     this.onAllPageChange(1)
     this.onOpenPageChange(1)
     this.onPickedUpPageChange(1)
     this.onAnsweredPageChange(1)
   }
-
+  
   onAllPageChange(page) {
     this.ApiService.getQuestions(page, PAGE_SIZE)
     .subscribe(questionsPage => {
       this.allQuestionsPage = questionsPage
     }, error => window.alert(error))
   }
-
+  
   onOpenPageChange(page) {
     this.ApiService.getQuestions(page, PAGE_SIZE, 'open')
     .subscribe(questionsPage => {
       this.openQuestionsPage = questionsPage
     }, error => window.alert(error))
   }
-
+  
   onPickedUpPageChange(page) {
     this.ApiService.getQuestions(page, PAGE_SIZE, 'picked-up')
     .subscribe(questionsPage => {
       this.pickedUpQuestionsPage = questionsPage
     }, error => window.alert(error))
   }
-
+  
   onAnsweredPageChange(page) {
     this.ApiService.getQuestions(page, PAGE_SIZE, 'answered')
     .subscribe(questionsPage => {
