@@ -31,7 +31,7 @@ export class LoginComponent {
     }, err => {
       if (err.status === 403) {
         this.unauthoriseduser = true
-      } else if (err.status !== 403) {
+      } else {
         this.invalidCredentials = true
       }
       this._router.navigate([''])
